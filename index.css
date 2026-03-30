@@ -1,0 +1,81 @@
+body {
+    font-family: sans-serif;
+    font-weight: bold;
+    background: #27292c;
+    color: white;
+    text-align: center;
+}
+
+.specialOutline {
+    position: relative;
+    background-color: var(--bg-color);
+    
+    font-size: 16px;
+    color: var(--text-color);
+    border: none;
+    border-radius: 3px;
+    
+    text-align: center;
+    padding: 7px 15px;
+    width: fit-content;
+    height: fit-content;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+textarea:focus, input:focus{
+    outline-style: solid;
+    outline-color: var(--outline-color);
+    outline-offset: 2px;
+    outline-width: 1px;
+}
+
+.specialOutline::after{
+    content: url();
+    position: absolute;
+    
+    outline-style: solid;
+    outline-color: var(--outline-color);
+    outline-offset: 2px;
+    outline-width: 1px;
+    
+    left: 0;
+    top: 0;
+    
+    border-radius: inherit;
+    width: calc(100%);
+    height: calc(100%);
+    transform: translate(0px, 0px) rotate(0deg);
+    background-color: rgba(255, 0, 0, 0);
+    
+    clip-path: path(var(--clip-path, "M 0 0"));
+    
+    transition-property: outline-width;
+    transition-duration: 100ms;
+    
+}
+
+.specialOutline {
+    cursor: pointer;
+}
+
+.specialOutline:active::after{
+    outline-width: 3px;
+}
+
+#button{
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+
+#button2{
+    left: 50%;
+    transform: translate(-50%,0);
+    top: 30px;
+}
